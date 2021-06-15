@@ -9,6 +9,7 @@ Use somente 1 letra para não terminais e terminais Ex não usar: E' ou A' usar 
 simbolo_inicio = 'E'
 Declarando a quantidade e as Regras
 Regras são declaradas normalmente do seguinte jeito:
+
 S->AB|ε
 
 Simbolo de epsilon é dado pelo caractere: ε
