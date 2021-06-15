@@ -4,11 +4,7 @@ import pandas as pd
 from os import system, name
 # Colocando número máx de recurções
 sys.setrecursionlimit(200)
-# Execute o programa a seguir para achar os caracteres terminais ou não da função de primeiros
-# Vá na barra de comandos do prompt siga até a pasta onde o arquivo se encontra e então digite o comando -> python sintatic.py
-# Depois siga as instruções do programa
-# Lembrando que nos Não Terminais só é aceito Símbolos Maiúsculos e nos Terminais não são aceitos Símbolos maiúsculos além de só serem aceitos caracteres, por causa da recursão
-# Use somente 1 letra para não terminais e terminais Ex não usar: E' ou A' usar somente um caractere
+
 end = False
 
 # Definindo Cores Para O Terminal
@@ -159,31 +155,6 @@ def criaTabela2(tabela):
 
     tabela = table
     return tabela
-
-def transformaString(sentenca):
-    lista = []
-    for x in sentenca:
-        lista.append(x)
-    
-    lista.append('$')
-    return lista
-
-# Teste da sentança desejada
-def testaSentenca(sentenca, TABELA2):
-    vetor1 = []
-    vetor1.append(simbolo_inicio + '$')
-
-    while True:
-        if sentenca[0] == '$' and vetor1[0] == '$':
-            return print('Sentença Aceita')
-        if vetor1[0] == sentenca[0] != '$':
-            sentenca.pop(0)
-            vetor1.pop(0)
-        if vetor1[0] in n_terminal:
-            if TABELA2[vetor1[0], sentenca[0]] == '':
-                return print('Erro')
-            if vetor1[0] in TABELA2[vetor1[0], sentenca[0]]:
-                vetor1 = TABELA2[vetor1[0], sentenca[0]]
 
 # Print da Tabela
 def printaTable(tabela):
@@ -370,11 +341,6 @@ while not end:
     print('')
     printaTable(TABELA2)
     print('')
-
-    sentenca = input('Para fazer a verificação da sentença insira a palavra: ')
-    sentenca = transformaString(sentenca)
-    print(sentenca)
-    testaSentenca(sentenca, TABELA2)
 
     # Condição de Parada do Loop Inicial
     q = input(RED+'Se quiser fazer mais uma análise digite 1 senão digite 2, e aperte enter, ou apenas Aperte Enter: '+END)
